@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+
+    PHR_JavaWebService
+
+    Copyright (C) 1999-2013 Photon Infotech Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.photon.phresco.eshop.models.CategoryHBM" table="eshop_categories">
+        <id name="categoryId" type="java.lang.Integer">
+            <meta attribute="use-in-equals">true</meta>
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="cat_name" length="255"/>
+        </property>
+        <property name="categoryImage" type="string">
+            <column name="cat_image" length="255"/>
+        </property>
+        <property name="categoryDetailsImage" type="string">
+            <column name="cat_details_image" length="255"/>
+        </property>
+        <property name="categoryParentId" type="java.lang.Integer">
+            <column name="cat_parent_id"/>
+        </property>
+        <property name="categoryDescription" type="string">
+            <column name="cat_description" length="255"/>
+        </property>
+    </class>
+</hibernate-mapping>

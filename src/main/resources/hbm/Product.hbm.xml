@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+
+    PHR_JavaWebService
+
+    Copyright (C) 1999-2013 Photon Infotech Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   	<class name="com.photon.phresco.eshop.models.ProductHBM" table="eshop_products">
+        <id name="productId" type="java.lang.Integer">
+            <meta attribute="use-in-equals">true</meta>
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="productName" type="string">
+            <column name="pd_name" length="255"/>
+        </property>
+        <property name="manufacturer" type="string">
+            <column name="pd_manufacturer" length="255"/>
+        </property>
+        <property name="categoryId" type="java.lang.Integer">
+            <column name="cat_id" length="11"/>
+        </property>
+        <property name="productQuantity" type="java.lang.Integer">
+            <column name="pd_qty" length="11"/>
+        </property>
+        <property name="model" type="string">
+            <column name="pd_model"/>
+        </property>
+        <property name="specialProduct" type="java.lang.Integer">
+            <column name="pd_special" length="1"/>
+        </property>
+        <property name="newProduct" type="java.lang.Integer">
+            <column name="pd_new" length="1"/>
+        </property>
+		<property name="listPrice" type="double">
+		     <column name="pd_list_price"/>
+		 </property>
+		<property name="sellPrice" type="double">
+		     <column name="pd_sell_price"/>
+		 </property>
+		 <property name="productDescription" type="string">
+		     <column name="pd_description" length="4000"/>
+		 </property>
+		 <property name="productImage" type="string">
+		     <column name="pd_img" length="255"/>
+		 </property>
+		 <property name="ProductDetailImage" type="string">
+		     <column name="pd_det_img" length="255"/>
+		 </property>
+		<property name="createdDate" type="java.util.Date">
+		     <column name="created_date"/>
+		 </property>
+		<property name="lastUpdatedDate" type="java.util.Date">
+		     <column name="last_updated_date"/>
+		 </property>        
+    </class>
+</hibernate-mapping>
